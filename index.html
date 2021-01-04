@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="styles/styles.css" rel="stylesheet">
+        <title>Tic Tac Toe</title>
+
+    </head>
+    <body>
+        <h1>tic-tac-toe</h1>
+        <h2>Choose An Opponent</h2>
+        <div class="opponent-container">
+            <button class="opponent-button man" type="button" onclick="buttons.reset(); buttons.revealPieces();">Man Vs Man</button>
+            <button class="opponent-button machine" type="button" onclick="buttons.reset(); buttons.revealPieces(); player2.playerName='machine';">Man Vs Machine</button>
+        </div>
+        <br>
+        <br>
+        <div class="piece-container">
+            <div class="piece-prompt-container"><span class="piece-prompt">Player1, Choose your Symbol:</span>
+            <br><span class="subtext">(X goes first)</span>
+            </div>
+            <button class="piece-button x" type="button" onclick="player1.playerMarker = 'X'; player2.playerMarker = 'O'; player1.turnIndicator = true; buttons.revealPlayers(); buttons.manVMachine()">X</button>
+            <button class="piece-button o" type="button" onclick="player1.playerMarker = 'O'; player2.playerMarker = 'X'; buttons.revealPlayers(); player1.turnIndicator = false; buttons.manVMachine()">O</button>
+        </div>
+        <div class="player-summary">
+            <span class="player1-name">Player1: X</span>
+            <br>
+            <span class="player2-name">Player2: O</span>
+        </div>
+       
+
+        <div class="board">
+
+        </div>
+        <button class="reset-button" type="button" onclick="buttons.reset(); buttons.hideEndForm()">Reset</button>
+
+        <div class="winning-form">
+            <div class="exit"><span onclick="buttons.hideEndForm()">x</span></div>
+            <div class="congrats"></div>
+            <button class="rematch end-button" type="button" onclick="buttons.rematch(); buttons.hideEndForm()">Rematch</button>
+            <button class="reset end-button" type="button" onclick="buttons.reset(); buttons.hideEndForm()">Reset</button>
+        </div>
+
+
+    </body>
+    <script type="text/javascript" src="scripts/scripts.js"></script>
+</html>
